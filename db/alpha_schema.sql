@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2020 at 10:55 AM
+-- Generation Time: May 20, 2020 at 12:38 PM
 -- Server version: 5.7.14
 -- PHP Version: 7.0.10
 
@@ -42,8 +42,8 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`productID`, `productName`, `productQuantity`, `buyingPrice`, `sellingPrice`, `dateCreated`) VALUES
 (28, 'Vesi Ya Maua', '0', '30000', '35000', '16/04/2020'),
 (27, 'Counter Qr2 Ndefu', '23', '2000', '2500', '01/04/2020'),
-(25, 'Peni', '28', '250', '300', '02/04/2020'),
-(17, 'Kalamuu', '0', '500', '700', '01/04/2020'),
+(25, 'Peni', '22', '250', '300', '02/04/2020'),
+(17, 'Kalamu', '0', '500', '700', '01/04/2020'),
 (26, 'Notebook', '35', '700', '2000', '01/04/2020'),
 (29, 'Majaladio', '50', '200', '300', '18/04/2020'),
 (30, 'Calendars', '50', '450', '500', '23/04/2020'),
@@ -52,20 +52,20 @@ INSERT INTO `products` (`productID`, `productName`, `productQuantity`, `buyingPr
 (33, 'Sharpeners', '100', '300', '400', '23/04/2020'),
 (34, 'Sticky Notes - BG', '20', '500', '1000', '23/04/2020'),
 (35, 'White Boards', '10', '1200', '1500', '23/04/2020'),
-(36, 'Marker Pen', '300', '800', '1000', '23/04/2020'),
 (37, 'Sticky Notes - Sm', '40', '200', '300', '23/04/2020'),
 (38, 'Stapler', '46', '2200', '3000', '23/04/2020'),
 (39, 'Staples', '400', '400', '500', '23/04/2020'),
 (40, 'Paper Clips', '34', '70', '100', '23/04/2020'),
-(41, 'Highlighter', '500', '400', '500', '23/04/2020'),
+(41, 'Highlighter', '495', '400', '500', '23/04/2020'),
 (42, 'Glue', '20', '500', '700', '23/04/2020'),
 (43, 'Lamination - ID', '1000', '30', '50', '23/04/2020'),
-(44, 'Binding', '9998', '200', '300', '23/04/2020'),
+(44, 'Binding', '99', '200', '300', '23/04/2020'),
 (45, 'Rim Paper', '30', '10000', '12000', '23/04/2020'),
 (46, 'Stamp', '30', '500', '700', '23/04/2020'),
-(47, 'Envelope - A4', '198', '150', '200', '23/04/2020'),
+(47, 'Envelope - A4', '192', '150', '200', '23/04/2020'),
 (48, 'Envelope - A3', '18', '200', '300', '23/04/2020'),
-(49, 'Envelope - Sm', '23', '75', '100', '23/04/2020');
+(49, 'Envelope - Sm', '23', '75', '100', '23/04/2020'),
+(50, 'Marker Pen', '24', '300', '500', '20/05/2020');
 
 -- --------------------------------------------------------
 
@@ -114,7 +114,13 @@ INSERT INTO `sales` (`id`, `productID`, `productName`, `quantitySold`, `priceEac
 (52, 44, 'Binding', 1, '300', 0, '300', '23/04/2020', '2020-04-23 14:03:32'),
 (53, 44, 'Binding', 1, '300', 0, '300', '23/02/2020', '2020-04-23 14:03:40'),
 (54, 48, 'Envelope - A3', 2, '300', 0, '600', '23/04/2020', '2020-04-23 14:03:58'),
-(55, 31, 'Eraser', 5, '300', 0, '1500', '24/04/2020', '2020-04-24 18:06:02');
+(55, 31, 'Eraser', 5, '300', 0, '1500', '24/04/2020', '2020-04-24 18:06:02'),
+(56, 47, 'Envelope - A4', 0, '200', 0, '0', '19/05/2020', '2020-05-19 13:22:24'),
+(57, 44, 'Binding', 1, '300', 0, '300', '19/05/2020', '2020-05-19 13:39:41'),
+(58, 47, 'Envelope - A4', 6, '200', 0, '1200', '19/05/2020', '2020-05-19 13:41:41'),
+(59, 25, 'Peni', 6, '300', 200, '1600', '19/05/2020', '2020-05-19 13:43:01'),
+(60, 41, 'Highlighter', 5, '500', 0, '2500', '20/05/2020', '2020-05-20 12:00:57'),
+(61, 44, 'Binding', 1, '300', 0, '300', '20/05/2020', '2020-05-20 12:01:34');
 
 -- --------------------------------------------------------
 
@@ -131,6 +137,13 @@ CREATE TABLE `trash` (
   `sellingPrice` varchar(255) NOT NULL,
   `dateDeleted` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `trash`
+--
+
+INSERT INTO `trash` (`trashID`, `productID`, `productName`, `productQuantity`, `buyingPrice`, `sellingPrice`, `dateDeleted`) VALUES
+(20, 36, 'Marker Pen', '300', '800', '1000', '23/04/2020');
 
 -- --------------------------------------------------------
 
@@ -149,7 +162,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`) VALUES
-(1, 'jane', '123');
+(1, 'admin', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -187,17 +200,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 --
 -- AUTO_INCREMENT for table `trash`
 --
 ALTER TABLE `trash`
-  MODIFY `trashID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `trashID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `user`
 --

@@ -1,7 +1,10 @@
 <?php
 $dbHost = "localhost";
 $dbUsername = "root";
+
+//put your db password here
 $dbPwd = "MpA0o3i4fvD2iipo";
+
 $dbName = "alpha_schema";
 
 $db = mysqli_connect($dbHost, $dbUsername, $dbPwd, $dbName);
