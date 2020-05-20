@@ -1,0 +1,72 @@
+html,
+body {
+    /*  font-family: "Poppins", sans-serif;*/
+    /*    font-family: 'Lato', sans-serif;*/
+}
+
+.sidebar .nav-item .nav-link span {
+    margin-left: 10px;
+}
+
+.table-responsive .table td,
+.table-responsive .table th {
+    padding: .5rem;
+}
+
+.table-hover tbody tr:hover {
+    color: #444;
+    background-color: rgba(0, 0, 0, .02);
+}
+
+.low-stock {
+    color: #ffa426 !important;
+}
+
+.no-stock {
+    color: #fc544b !important;
+}
+
+.p-o-s .btn-light {
+    color: #6e707e;
+    background-color: #fff !important;
+    border: 1px solid #d1d3e2;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-radius: 0.25rem;
+}
+
+.swal-footer {
+    text-align: center;
+}
+
+.swal2-styled.swal2-confirm {
+    border: 0;
+    border-radius: .25em;
+    background: initial;
+    background-color: #0086ff !important;
+    color: #fff;
+    font-size: inherit;
+}
+
+.swal2-actions:not(.swal2-loading) .swal2-styled:active {
+    color: #fff;
+    background-color: #394eea;
+    border-color: #394eea;
+}
+
+.swal2-styled:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+.swal2-content {
+    z-index: 1;
+    justify-content: center;
+    margin: 0;
+    color: #545454;
+    font-size: inherit;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    word-wrap: break-word;
+}
