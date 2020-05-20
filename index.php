@@ -1,3 +1,3 @@
 <?php
-header("Location: point-of-sale");
+header("Location: login");
 ?>
