@@ -7,8 +7,8 @@
     <meta name="description" content="A Content Management System for Alpha Stationery">
     <meta name="author" content="Kay Khahima">
     <title>Alpha Stationery</title>
-    <link href="<?php echo BASE_URL;?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo BASE_URL;?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo BASE_URL;?>/vendorr/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo BASE_URL;?>/vendorr/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo BASE_URL;?>/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" type="text/css">
     <script src="<?php echo BASE_URL;?>/js/chart.js"></script>
     <script src="<?php echo BASE_URL;?>/js/swal2.js"></script>
