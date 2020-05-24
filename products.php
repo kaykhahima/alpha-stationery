@@ -51,7 +51,7 @@
                         icon: 'success',
                         title: 'Success!',
                         text: 'Product Added Successfully!',
-                        timer: 1500,
+                        timer: 1000,
                         buttons: false
                     });
                 </script>";       
@@ -127,10 +127,10 @@
                                             <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Quantity" required>
                                         </div>
                                         <div class="form-group col-md-3 mb-0">
-                                            <input type="number" class="form-control" id="buyingPrice" name="buyingPrice" placeholder="Buying Price" required>
+                                            <input type="number" class="form-control" id="buyingPrice" name="buyingPrice" placeholder="Buying Price">
                                         </div>
                                         <div class="form-group col-md-3 mb-0">
-                                            <input type="number" class="form-control" id="sellingPrice" name="sellingPrice" placeholder="Selling Price" required>
+                                            <input type="number" class="form-control" id="sellingPrice" name="sellingPrice" placeholder="Selling Price">
                                         </div>
                                         <div class="form-group col-md-1 mb-0">
                                             <input type="submit" role="button" class="btn btn-primary btn-block" name="add" value="Add">
@@ -191,8 +191,8 @@
                 echo '<tr class="'.$trClass.'">
                             <td>'.$row['productName'].'</td>
                             <td>'.$row['productQuantity'].'</td>
-                            <td>Tzs '.number_format($row['buyingPrice']).'/=</td>
-                            <td>Tzs '.number_format($row['sellingPrice']).'/=</td>
+                            <td>Tzs '.$row['buyingPrice'].'/=</td>
+                            <td>Tzs '.$row['sellingPrice'].'/=</td>
                             <td>
                                 <a href="restock?product-id='.$row['productID'].'" class="btn btn-primary btn-sm">Restock</a>
                                 <a href="edit-product?id='.$row['productID'].'" class="btn btn-success btn-sm">Edit</a>

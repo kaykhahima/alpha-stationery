@@ -110,6 +110,12 @@
                                                         $status = "disabled";
                                                         echo '<option value="'.$row['productID'].'"'; 
                                                         if($row['productQuantity'] <= 0) {echo $status;}
+                                                        if($row['sellingPrice'] == "") {
+                                                            $row['sellingPrice'] = 0;
+                                                        }
+                                                        else {
+                                                            $row['sellingPrice'] = $row['sellingPrice'];
+                                                        }
                                                         echo '>'.$row['productName'].' @ Tzs '.number_format($row['sellingPrice']).'/=</option>';
                                                     }
                                                 ?>
