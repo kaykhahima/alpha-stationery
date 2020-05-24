@@ -26,7 +26,7 @@
             <div class="col error-section">
                 <h1 class="text-danger"><strong>Error 404!</strong></h1>
                 <h3 class="my-3">Sorry! You are not authorized to view this page.</h3>
-                <h5>Please <a href="/<?php echo BASE_URL;?>/login">click here to login.</a></h5>
+                <h5>Please <a href="<?php echo BASE_URL;?>/login">click here to login.</a></h5>
             </div>
         </div>
     </div>
