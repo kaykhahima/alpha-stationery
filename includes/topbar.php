@@ -3,7 +3,7 @@
          <i class="fa fa-bars"></i>
      </button>
      <ul class="navbar-nav ml-auto">
-<!--
+         <!--
          <li class="nav-item dropdown no-arrow">
              <a class="nav-link" href="documentation" id="userDropdown" role="button">
                  <span class="ml-2 d-none d-lg-inline text-white small"><i class="fa fa-book"> </i> Documentation</span>
@@ -11,7 +11,7 @@
          </li>
 -->
          <li class="nav-item dropdown no-arrow">
-             <a class="nav-link" href="logout" id="userDropdown" role="button">
+             <a class="nav-link" href="<?php echo BASE_URL;?>/logout" id="userDropdown" role="button">
                  <span class="ml-2 d-none d-lg-inline text-white small"><i class="fa fa-sign-out-alt"> </i> Logout</span>
              </a>
          </li>

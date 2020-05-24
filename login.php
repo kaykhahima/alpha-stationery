@@ -9,6 +9,7 @@
     body {
         height: 100vh;
     }
+
     .form-signin {
         width: 100%;
         max-width: 330px;
@@ -26,22 +27,23 @@
     .form-signin .form-control:focus {
         z-index: 2;
     }
+
     .login-form {
         position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding:0 !important;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0 !important;
     }
 
 </style>
 
 <body class="text-center">
-<div class="container">
-<div class="row">
-<div class="col login-form">
-<form class="form-signin" method="post" action="login">
- <?php
+    <div class="container">
+        <div class="row">
+            <div class="col login-form">
+                <form class="form-signin" method="post" action="login">
+                    <?php
         $name = "";
     
         if(isset($_POST['login'])) {
@@ -75,17 +77,17 @@
 }
         
         ?>
-        <img class="logo mb-4" src="images/logo/alpha-logo-vertical.png" alt="alpha stationery logo" width="250px" height="">
-        <label for="inputUsername" class="sr-only">Email address</label>
-        <input type="text" id="inputUsername" class="form-control mb-2" name="username" placeholder="Username" value="<?php echo $name;?>" autofocus required>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control mb-2" name="password" placeholder="Password" required>
-        <input role="button" class="btn btn-lg btn-primary btn-block" type="submit" name="login" value="Login" />
-    </form>
+                    <img class="logo mb-4" src="<?php echo BASE_URL;?>/images/logo/alpha-logo-vertical.png" alt="alpha stationery logo" width="250px" height="">
+                    <label for="inputUsername" class="sr-only">Email address</label>
+                    <input type="text" id="inputUsername" class="form-control mb-2" name="username" placeholder="Username" value="<?php echo $name;?>" autofocus required>
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" id="inputPassword" class="form-control mb-2" name="password" placeholder="Password" required>
+                    <input role="button" class="btn btn-lg btn-primary btn-block" type="submit" name="login" value="Login" />
+                </form>
+            </div>
+        </div>
     </div>
-</div>
-</div>
-    
+
     <?php include 'includes/scripts.php';?>
 </body>
 

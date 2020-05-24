@@ -89,7 +89,7 @@ if(isset($_GET['recover-id'])) {
 
                                     if(mysqli_num_rows($fetchProductsSql) == 0) {
                                         echo '<div class="text-center p-1">
-                                                <img src="images/cover/great.png" class="mt-4" width="30%">
+                                                <img src="'.BASE_URL.'/images/cover/great.png" class="mt-4" width="30%">
                                                 <h4 class="mt-4 text-dark">Great! No deleted products.</h4>
                                             </div>';
                                     }
@@ -122,8 +122,8 @@ if(isset($_GET['recover-id'])) {
                                                         <td>'.$row['buyingPrice'].'</td>
                                                         <td>'.$row['sellingPrice'].'</td>
                                                         <td>
-                                                            <a href="trash?recover-id='.$row['productID'].'" class="btn btn-primary btn-sm"><i class="fa fa-redo"></i></a>
-                                                            <a href="trash?delete-id='.$row['productID'].'" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                                            <a href="'.BASE_URL.'/trash?recover-id='.$row['productID'].'" class="btn btn-primary btn-sm"><i class="fa fa-redo"></i></a>
+                                                            <a href="'.BASE_URL.'/trash?delete-id='.$row['productID'].'" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                                                         </td>
                                                     </tr>';
                                                     }

@@ -40,7 +40,7 @@ if(isset($_GET['product-id'])){
                         <!-- Datatables -->
                         <!-- DataTable with Hover -->
                         <div class="col-lg-4 offset-lg-4">
-                               <?php
+                            <?php
                                     if(isset($_POST['restock'])) {
                                         $quantity = $_POST['quantity'];
                                         $newQuantity = $_SESSION['productQuantity'] + $quantity;
@@ -63,21 +63,21 @@ if(isset($_GET['product-id'])){
                                     }
                             
                             ?>
-                                <form method="post" action="restock">
-                                    <div class="form-row">
-                                        <div class="form-group col-md-12">
-                                            <label for="name">Name</label>
-                                            <input type="text" class="form-control" id="name" value="<?php echo $_SESSION['productName'];?>" disabled>
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <label for="quantity">Quantity</label>
-                                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="" required>
-                                            <small class="text-primary">Currently: <strong><?php echo $_SESSION['productQuantity'];?></strong></small>
-                                        </div>
+                            <form method="post" action="<?php echo BASE_URL;?>restock">
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" id="name" value="<?php echo $_SESSION['productName'];?>" disabled>
                                     </div>
-                                    <input type="submit" role="button" name="restock" class="btn btn-primary btn-block btn-lg" value="Restock">
-                                </form>
-                                
+                                    <div class="form-group col-md-12">
+                                        <label for="quantity">Quantity</label>
+                                        <input type="number" class="form-control" id="quantity" name="quantity" placeholder="" required>
+                                        <small class="text-primary">Currently: <strong><?php echo $_SESSION['productQuantity'];?></strong></small>
+                                    </div>
+                                </div>
+                                <input type="submit" role="button" name="restock" class="btn btn-primary btn-block btn-lg" value="Restock">
+                            </form>
+
                         </div>
                     </div>
                     <!--Row-->

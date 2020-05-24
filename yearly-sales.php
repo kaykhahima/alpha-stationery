@@ -32,13 +32,13 @@
                             <div class="col-lg-4">
                                 <ul class="nav nav-pills nav-fill">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="daily-sales">Daily</a>
+                                        <a class="nav-link" href="<?php echo BASE_URL;?>/daily-sales">Daily</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="monthly-sales">Monthly</a>
+                                        <a class="nav-link" href="<?php echo BASE_URL;?>/monthly-sales">Monthly</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="yearly-sales">Yearly</a>
+                                        <a class="nav-link active" href="<?php echo BASE_URL;?>/yearly-sales">Yearly</a>
                                     </li>
                                 </ul>
                             </div>
@@ -59,9 +59,9 @@
                                             
                                             if(mysqli_num_rows($fetchYearlySalesQuery) == 0) {
                                                 echo '<div class="text-center p-2">
-                                    <img src="images/cover/cart.png" class="text-center" width="30%">
+                                    <img src="'.BASE_URL.'/images/cover/cart.png" class="text-center" width="30%">
                                     <h5 class="my-4">You have not made any sales yet!</h5>
-                                    <a href="point-of-sale" class="btn btn-primary">Go to Point-of-sale  <i class="fa fa-arrow-right"></i></a>
+                                    <a href="'.BASE_URL.'/point-of-sale" class="btn btn-primary">Go to Point-of-sale  <i class="fa fa-arrow-right"></i></a>
                                 </div>'; 
                                             }
         else {
@@ -75,7 +75,7 @@
                                 <div class="row">
                                     <div class="col-lg-12 pt-3 pb-0">
                                         <span class="h3">Yearly sales</span>
-                                        <form class="form-inline float-right" method="post" action="yearly-sales">
+                                        <form class="form-inline float-right" method="post" action="<?php echo BASE_URL;?>yearly-sales">
                                             <div class="form-group mx-sm-3 mb-2">
                                                 <label for="filter" class="sr-only">Filter</label>
                                                 <input type="text" class="form-control datetimepicker-input" id="datetimepicker2" data-toggle="datetimepicker" data-target="#datetimepicker2" name="month" placeholder="Month">

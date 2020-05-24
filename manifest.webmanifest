@@ -1,8 +1,8 @@
 {
   "name": "Alpha Stationery",
   "short_name": "Alpha Stationery",
-  "theme_color": "#fff",
-  "background_color": "#fff",
+  "theme_color": "##0086ff",
+  "background_color": "#ffffff",
   "display": "standalone",
   "start_url": ".",
   "icons": [

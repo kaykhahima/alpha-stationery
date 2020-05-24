@@ -34,7 +34,7 @@
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <strong>Warning!</strong> You have <a href="products?items=low-on-stock" style="color:#fff;font-weight:bold;text-decoration:underline">'.$numberOfLowProducts.' item(s)</a> low on stock.
+            <strong>Warning!</strong> You have <a href="'.BASE_URL.'/products?items=low-on-stock" style="color:#fff;font-weight:bold;text-decoration:underline">'.$numberOfLowProducts.' item(s)</a> low on stock.
         </div>';
     }
     
@@ -48,7 +48,7 @@
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <strong>Warning!</strong> You have <a href="products?items=out-of-stock" style="color:#fff;font-weight:bold;text-decoration: underline">'.$numberOfNoProducts.' item(s)</a> out of stock.
+            <strong>Warning!</strong> You have <a href="'.BASE_URL.'/products?items=out-of-stock" style="color:#fff;font-weight:bold;text-decoration: underline">'.$numberOfNoProducts.' item(s)</a> out of stock.
         </div>';
     }
         
@@ -83,7 +83,7 @@
                                             <div class="h6 mb-0 font-weight-bold text-gray-800">Tzs <?php echo number_format($monthSales);?>/=</div>
                                             <div class="mt-2 mb-0 text-muted text-xs">
                                                 <span class="text-primary mr-2"><i class="fa fa-hand-point-right"></i></span>
-                                                <span><a href="monthly-sales" class="text-primary">View All</a></span>
+                                                <span><a href="<?php echo BASE_URL;?>/monthly-sales" class="text-primary">View All</a></span>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -103,7 +103,7 @@
                                             <div class="h6 mb-0 font-weight-bold text-gray-800"><?php echo $thisNumber;?></div>
                                             <div class="mt-2 mb-0 text-muted text-xs">
                                                 <span class="text-success mr-2"><i class="fa fa-hand-point-right"></i></span>
-                                                <span><a href="monthly-sales" class="text-success">View All</a></span>
+                                                <span><a href="<?php echo BASE_URL;?>/monthly-sales" class="text-success">View All</a></span>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -122,7 +122,7 @@
                                             <div class="h6 mb-0 font-weight-bold text-gray-800"><?php echo $numberOfNoProducts;?></div>
                                             <div class="mt-2 mb-0 text-muted text-xs">
                                                 <span class="text-danger mr-2"><i class="fa fa-hand-point-right"></i></span>
-                                                <span><a href="products?items=out-of-stock" class="text-danger">View All</a></span>
+                                                <span><a href="<?php echo BASE_URL;?>/products?items=out-of-stock" class="text-danger">View All</a></span>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -141,7 +141,7 @@
                                             <div class="h6 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $numberOfLowProducts;?></div>
                                             <div class="mt-2 mb-0 text-muted text-xs">
                                                 <span class="text-warning mr-2"><i class="fa fa-hand-point-right"></i></span>
-                                                <span><a href="products?items=low-on-stock" class="text-warning">View All</a></span>
+                                                <span><a href="<?php echo BASE_URL;?>/products?items=low-on-stock" class="text-warning">View All</a></span>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -238,7 +238,7 @@
                                             echo '<div class="text-center">
                                                     <img src="images/cover/empty.png" class="text-center w-50">
                                                     <h5 class="mt-4">Please make a few sales.</h5>
-                                                     <a href="point-of-sale" class="btn btn-primary my-3">Point-of-sale  <i class="fa fa-arrow-right"></i></a>
+                                                     <a href="'.BASE_URL.'/point-of-sale" class="btn btn-primary my-3">Point-of-sale  <i class="fa fa-arrow-right"></i></a>
                                                     </div>
                                                     ';
                                         }

@@ -118,7 +118,7 @@
                     <div class="card mb-2">
                         <div class="card-body px-2">
                             <div class="col">
-                                <form class="" method="post" action="products">
+                                <form class="" method="post" action="<?php echo BASE_URL;?>/products">
                                     <div class="form-row">
                                         <div class="form-group col-md-3 mb-0">
                                             <input type="text" class="form-control" id="name" name="name" placeholder="Product Name" required>
@@ -156,7 +156,7 @@
 
         if(mysqli_num_rows($fetchProductsSql) == 0) {
             echo '<div class="text-center">
-                                                    <img src="images/cover/empty.png" class="text-center w-25">
+                                                    <img src="'.BASE_URL.'/images/cover/empty.png" class="text-center w-25">
                                                     <h5 class="my-4">You have no products yet!</h5>
                                                     </div>';
         }
@@ -194,9 +194,9 @@
                             <td>Tzs '.$row['buyingPrice'].'/=</td>
                             <td>Tzs '.$row['sellingPrice'].'/=</td>
                             <td>
-                                <a href="restock?product-id='.$row['productID'].'" class="btn btn-primary btn-sm">Restock</a>
-                                <a href="edit-product?id='.$row['productID'].'" class="btn btn-success btn-sm">Edit</a>
-                                <a href="products?delete-id='.$row['productID'].'" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="'.BASE_URL.'/restock?product-id='.$row['productID'].'" class="btn btn-primary btn-sm">Restock</a>
+                                <a href="'.BASE_URL.'/edit-product?id='.$row['productID'].'" class="btn btn-success btn-sm">Edit</a>
+                                <a href="'.BASE_URL.'/products?delete-id='.$row['productID'].'" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>';
             }

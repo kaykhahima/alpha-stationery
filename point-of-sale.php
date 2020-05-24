@@ -84,7 +84,7 @@
                         
                                 if(mysqli_num_rows($fetchProductsSqlQuery) == 0) {
                                     echo '<div class="text-center p-1">
-                                            <img src="images/cover/empty.png" class="w-50 mt-4">
+                                            <img src="'.BASE_URL.'/images/cover/empty.png" class="w-50 mt-4">
                                                     <h4 class="mt-4 text-dark">It feels a little lonely in here!</h4>
                                                     <p>Please add some products to make some sales.</p>
                                                      <a href="products" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Add Products</a>
@@ -94,11 +94,11 @@
         
                             ?>
                             <div class="text-center mt-2">
-                                <img class="logo mb-3" src="images/logo/alpha-logo-vertical.png" alt="alpha stationery logo" width="250px" height="">
+                                <img class="logo mb-3" src="<?php echo BASE_URL;?>/images/logo/alpha-logo-vertical.png" alt="alpha stationery logo" width="250px" height="">
                                 <h6 class="mb-2 text-uppercase text-primary"><strong>Point of Sale</strong></h6>
                             </div>
 
-                            <form method="post" action="point-of-sale">
+                            <form method="post" action="<?php echo BASE_URL;?>/point-of-sale">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="name">Product Name</label>

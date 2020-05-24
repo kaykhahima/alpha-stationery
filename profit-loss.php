@@ -34,9 +34,9 @@
 
                                             if(mysqli_num_rows($fetchSalesQuery) == 0) {
                                                 echo '<div class="text-center p-5">
-                                                        <img src="images/cover/cart.png" class="text-center" width="39%">
+                                                        <img src="'.BASE_URL.'/images/cover/cart.png" class="text-center" width="39%">
                                                         <h5 class="my-4">You have not made any sales yet!</h5>
-                                                        <a href="point-of-sale" class="btn btn-primary">Go to Point-of-sale  <i class="fa fa-arrow-right"></i></a>
+                                                        <a href="'.BASE_URL.'/point-of-sale" class="btn btn-primary">Go to Point-of-sale  <i class="fa fa-arrow-right"></i></a>
                                                     </div>';  
                                             }
                                             else {

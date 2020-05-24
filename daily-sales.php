@@ -13,8 +13,6 @@
     ?>
 
 <body id="page-top">
-
-
     <div id="wrapper">
         <!-- Sidebar -->
         <?php include 'includes/sidebar.php';?>
@@ -29,21 +27,18 @@
                     <div class="container-fluid mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Sales</h1>
                     </div>
-
-
-
                     <div class="container-fluid pb-4">
                         <div class="row">
                             <div class="col-lg-4">
                                 <ul class="nav nav-pills nav-fill">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="daily-sales">Daily</a>
+                                        <a class="nav-link active" href="<?php echo BASE_URL;?>/daily-sales">Daily</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="monthly-sales">Monthly</a>
+                                        <a class="nav-link" href="<?php echo BASE_URL;?>/monthly-sales">Monthly</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="yearly-sales">Yearly</a>
+                                        <a class="nav-link" href="<?php echo BASE_URL;?>/yearly-sales">Yearly</a>
                                     </li>
                                 </ul>
                             </div>
@@ -59,9 +54,9 @@
 
                         if(mysqli_num_rows($fetchSalesQuery) == 0) {
                         echo '<div class="text-center p-2">
-                                    <img src="images/cover/cart.png" class="text-center" width="30%">
+                                    <img src="'.BASE_URL.'/images/cover/cart.png" class="text-center" width="30%">
                                     <h5 class="my-4">You have not made any sales today yet!</h5>
-                                    <a href="point-of-sale" class="btn btn-primary">Go to Point-of-sale  <i class="fa fa-arrow-right"></i></a>
+                                    <a href="'.BASE_URL.'/point-of-sale" class="btn btn-primary">Go to Point-of-sale  <i class="fa fa-arrow-right"></i></a>
                                 </div>';  
                         }
                         else {
