@@ -169,7 +169,8 @@
                                             <tr>
                                                 <!--                                                <th class="border-0 text-uppercase small font-weight-bold">ID</th>-->
                                                 <th class="border-0 text-uppercase small font-weight-bold">Name</th>
-                                                <th class="border-0 text-uppercase small font-weight-bold">Quantity</th>
+                                                <th class="border-0 text-uppercase small font-weight-bold">Initial Stock</th>
+                                                <th class="border-0 text-uppercase small font-weight-bold">On Stock</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Buying Price</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Selling Price</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Action</th>
@@ -179,6 +180,13 @@
                                             <?php
 
             while($row = mysqli_fetch_array($fetchProductsSql)) {
+
+                if($row['sellingPrice'] == "") {
+                        $row['sellingPrice'] = 0;
+                    }
+                    else {
+                        $row['sellingPrice'] = $row['sellingPrice'];
+                    }
 
                 $trClass = "";
                 if($row['productQuantity'] <= 10 && $row['productQuantity'] > 0) {
@@ -190,11 +198,11 @@
 
                 echo '<tr class="'.$trClass.'">
                             <td>'.$row['productName'].'</td>
+                            <td>'.$row['initialStock'].'</td>
                             <td>'.$row['productQuantity'].'</td>
                             <td>Tzs '.$row['buyingPrice'].'/=</td>
-                            <td>Tzs '.$row['sellingPrice'].'/=</td>
+                            <td>Tzs '.number_format($row['sellingPrice']).' /=</td>
                             <td>
-                                <a href="'.BASE_URL.'/restock?product-id='.$row['productID'].'" class="btn btn-primary btn-sm">Restock</a>
                                 <a href="'.BASE_URL.'/edit-product?id='.$row['productID'].'" class="btn btn-success btn-sm">Edit</a>
                                 <a href="'.BASE_URL.'/products?delete-id='.$row['productID'].'" class="btn btn-danger btn-sm">Delete</a>
                             </td>
