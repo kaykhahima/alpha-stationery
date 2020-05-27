@@ -41,9 +41,6 @@
                                 <?php
                                     $fetchProducts = "SELECT products.productID, products.productName, products.buyingPrice, products.sellingPrice, products.initialStock, products.productQuantity,  SUM(sales.quantitySold) FROM products LEFT JOIN sales ON products.productID=sales.productID GROUP BY ProductID";
                                     $fetchProductsSql = mysqli_query($db, $fetchProducts);
-        if(!$fetchProductsSql) {
-            die(mysqli_error($db));
-        }
 
                                     if(mysqli_num_rows($fetchProductsSql) == 0) {
                                         echo '<div class="text-center">
@@ -63,7 +60,7 @@
                                                 <th class="border-0 text-uppercase small font-weight-bold">Buying Price</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Selling Price</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Initial Stock</th>
-                                                <th class="border-0 text-uppercase small font-weight-bold">Quantity Sold</th>
+                                                <th class="border-0 text-uppercase small font-weight-bold">Sold Quantity</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Quantity Left</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Loss</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Amount</th>
@@ -89,6 +86,12 @@
                     else {
                         $row['sellingPrice'] = $row['sellingPrice'];
                     }
+                if($row['buyingPrice'] == "") {
+                        $row['buyingPrice'] = 0;
+                    }
+                    else {
+                        $row['buyingPrice'] = $row['buyingPrice'];
+                    }
 
                 $visuals = "";
 
@@ -108,7 +111,7 @@
 
                 echo '<tr>
                             <td>'.$row['productName'].'</td>
-                            <td>Tzs '.$row['buyingPrice'].'/=</td>
+                            <td>Tzs '.number_format($row['buyingPrice']).'/=</td>
                             <td>Tzs '.number_format($row['sellingPrice']).'/=</td>
                             <td>'.$row['initialStock'].'</td>
                             <td>'.$row['SUM(sales.quantitySold)'].'</td>
@@ -116,7 +119,7 @@
                             <td>'.$visuals. $difference.'</td>
                             <td>Tzs '.number_format($difference * $row['sellingPrice']).'/=</td>
                             <td>
-                                <a href="'.BASE_URL.'/restock?product-id='.$row['productID'].'" class="btn btn-primary btn-sm">Restock</a>
+                                <a href="'.BASE_URL.'/restock?product-id='.$row['productID'].'" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="left" title="Restock"><i class="fa fa-plus-circle"></i></a>
                             </td>
                         </tr>';
             }

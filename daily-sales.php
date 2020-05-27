@@ -108,7 +108,7 @@
                                                     <td>Tzs '.number_format($row['discount']).'/=</td>
                                                     <td>Tzs '.number_format($row['totalAmount']).'/=</td>
                                                     <td>
-                                                    <a href="edit-sales?id='.$row['id'].'" class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="edit-sales?id='.$row['id'].'" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="left" title="Edit"><i class="fa fa-edit"></i></a>
                                                     </td>
                                                     </tr>';
                                                     }

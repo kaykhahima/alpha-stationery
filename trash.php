@@ -122,8 +122,8 @@ if(isset($_GET['recover-id'])) {
                                                         <td>'.$row['buyingPrice'].'</td>
                                                         <td>'.$row['sellingPrice'].'</td>
                                                         <td>
-                                                            <a href="'.BASE_URL.'/trash?recover-id='.$row['productID'].'" class="btn btn-primary btn-sm"><i class="fa fa-redo"></i></a>
-                                                            <a href="'.BASE_URL.'/trash?delete-id='.$row['productID'].'" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                                            <a href="'.BASE_URL.'/trash?recover-id='.$row['productID'].'" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="left" title="Recover"><i class="fa fa-redo"></i></a>
+                                                            <a href="'.BASE_URL.'/trash?delete-id='.$row['productID'].'" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="left" title="Delete Permanently"><i class="fas fa-trash"></i></a>
                                                         </td>
                                                     </tr>';
                                                     }

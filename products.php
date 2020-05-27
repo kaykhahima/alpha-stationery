@@ -111,7 +111,7 @@
                 <?php include 'includes/topbar.php';?>
                 <!-- Topbar -->
                 <!-- Container Fluid-->
-                <div class="container-fluid" id="container-wrapper">
+                <div class="p-2" id="container-wrapper">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Products</h1>
                     </div>
@@ -151,16 +151,16 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Products</h6>
                                 </div>
                                 <?php
-        $fetchProducts = "SELECT * FROM products $dynamicWhereClause";
-        $fetchProductsSql = mysqli_query($db, $fetchProducts);
+                                    $fetchProducts = "SELECT products.productID, products.productName, products.buyingPrice, products.sellingPrice, products.initialStock, products.productQuantity,  SUM(sales.quantitySold) FROM products LEFT JOIN sales ON products.productID=sales.productID $dynamicWhereClause GROUP BY ProductID";
+                                    $fetchProductsSql = mysqli_query($db, $fetchProducts);
 
-        if(mysqli_num_rows($fetchProductsSql) == 0) {
-            echo '<div class="text-center">
+                                    if(mysqli_num_rows($fetchProductsSql) == 0) {
+                                        echo '<div class="text-center">
                                                     <img src="'.BASE_URL.'/images/cover/empty.png" class="text-center w-25">
                                                     <h5 class="my-4">You have no products yet!</h5>
-                                                    </div>';
-        }
-        else {
+                                                </div>';
+                                    }
+                                    else {
                                     ?>
 
                                 <div class="table-responsive p-3">
@@ -170,6 +170,7 @@
                                                 <!--                                                <th class="border-0 text-uppercase small font-weight-bold">ID</th>-->
                                                 <th class="border-0 text-uppercase small font-weight-bold">Name</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Initial Stock</th>
+                                                <th class="border-0 text-uppercase small font-weight-bold">Sold Quantity</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Quantity Left</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Buying Price</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Selling Price</th>
@@ -193,6 +194,12 @@
                     else {
                         $row['buyingPrice'] = $row['buyingPrice'];
                     }
+                if($row['SUM(sales.quantitySold)'] == "") {
+                    $row['SUM(sales.quantitySold)'] = 0;
+                }
+                else {
+                    $row['SUM(sales.quantitySold)'] = $row['SUM(sales.quantitySold)'];
+                }
 
                 $trClass = "";
                 if($row['productQuantity'] <= 10 && $row['productQuantity'] > 0) {
@@ -205,12 +212,13 @@
                 echo '<tr class="'.$trClass.'">
                             <td>'.$row['productName'].'</td>
                             <td>'.$row['initialStock'].'</td>
+                            <td>'.$row['SUM(sales.quantitySold)'].'</td>
                             <td>'.$row['productQuantity'].'</td>
                             <td>Tzs '.number_format($row['buyingPrice']).'/=</td>
                             <td>Tzs '.number_format($row['sellingPrice']).'/=</td>
                             <td>
-                                <a href="'.BASE_URL.'/edit-product?id='.$row['productID'].'" class="btn btn-success btn-sm">Edit</a>
-                                <a href="'.BASE_URL.'/products?delete-id='.$row['productID'].'" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="'.BASE_URL.'/edit-product?id='.$row['productID'].'" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="left" title="Edit"><i class="fa fa-edit"></i></a>
+                                <a href="'.BASE_URL.'/products?delete-id='.$row['productID'].'" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="left" title="Delete"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>';
             }
