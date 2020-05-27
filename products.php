@@ -187,6 +187,12 @@
                     else {
                         $row['sellingPrice'] = $row['sellingPrice'];
                     }
+                 if($row['buyingPrice'] == "") {
+                        $row['buyingPrice'] = 0;
+                    }
+                    else {
+                        $row['buyingPrice'] = $row['buyingPrice'];
+                    }
 
                 $trClass = "";
                 if($row['productQuantity'] <= 10 && $row['productQuantity'] > 0) {
@@ -200,8 +206,8 @@
                             <td>'.$row['productName'].'</td>
                             <td>'.$row['initialStock'].'</td>
                             <td>'.$row['productQuantity'].'</td>
-                            <td>Tzs '.$row['buyingPrice'].'/=</td>
-                            <td>Tzs '.number_format($row['sellingPrice']).' /=</td>
+                            <td>Tzs '.number_format($row['buyingPrice']).'/=</td>
+                            <td>Tzs '.number_format($row['sellingPrice']).'/=</td>
                             <td>
                                 <a href="'.BASE_URL.'/edit-product?id='.$row['productID'].'" class="btn btn-success btn-sm">Edit</a>
                                 <a href="'.BASE_URL.'/products?delete-id='.$row['productID'].'" class="btn btn-danger btn-sm">Delete</a>

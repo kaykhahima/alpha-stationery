@@ -86,6 +86,10 @@ if(isset($_GET['id'])){
                                                                 timer: 1500,
                                                                 buttons: false
                                                             });
+
+                                                            setTimeout(function () {
+                                                            window.location.href='".BASE_URL."/daily-sales';
+                                                            }, 1000);
                                                         </script>";
 
                                                     $_SESSION['quantitySold'] = $quantitySold;

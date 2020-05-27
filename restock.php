@@ -42,7 +42,7 @@ if(isset($_GET['product-id'])){
                         <div class="col-lg-4 offset-lg-4">
                             <?php
                                     if(isset($_POST['restock'])) {
-                                        $quantity = $_POST['quantity'];
+                                        $quantity = $_POST['initStock'];
                                         $newQuantity = $_SESSION['initialStock'] + $quantity;
                                         $_SESSION['initialStock'] = $newQuantity;
 
@@ -58,6 +58,10 @@ if(isset($_GET['product-id'])){
                                                             timer: 1500,
                                                             buttons: false
                                                         });
+
+                                                        setTimeout(function () {
+                                                        window.location.href='".BASE_URL."/stock';
+                                                        }, 1000);
                                                     </script>";
                                         }
                                     }

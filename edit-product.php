@@ -61,9 +61,14 @@ if(isset($_GET['id'])){
                                                             icon: 'success',
                                                             title: 'Success!',
                                                             text: 'Product Edited Successfully!',
-                                                            timer: 1500,
+                                                            timer: 2000,
                                                             buttons: false
                                                         });
+
+                                                        setTimeout(function () {
+                                                        window.location.href='".BASE_URL."/products';
+                                                        }, 1000);
+
                                                     </script>";
                                         
                                                 $_SESSION['productName'] = $productName;
