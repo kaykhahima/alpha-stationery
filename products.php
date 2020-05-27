@@ -43,7 +43,7 @@
             }
             else {
 
-                $productSql = "INSERT INTO products(productName, productQuantity, buyingPrice, sellingPrice, dateCreated) VALUES('$productName', '$productQuantity', '$buyingPrice', '$sellingPrice', '$todayDate')";
+                $productSql = "INSERT INTO products(productName, initialStock, productQuantity, buyingPrice, sellingPrice, dateCreated) VALUES('$productName', '$productQuantity', '$productQuantity', '$buyingPrice', '$sellingPrice', '$todayDate')";
                 $productSqlquery = mysqli_query($db, $productSql);
 
                 echo "    <script>
@@ -170,7 +170,7 @@
                                                 <!--                                                <th class="border-0 text-uppercase small font-weight-bold">ID</th>-->
                                                 <th class="border-0 text-uppercase small font-weight-bold">Name</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Initial Stock</th>
-                                                <th class="border-0 text-uppercase small font-weight-bold">On Stock</th>
+                                                <th class="border-0 text-uppercase small font-weight-bold">Quantity Left</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Buying Price</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Selling Price</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Action</th>

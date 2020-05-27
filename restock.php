@@ -46,7 +46,7 @@ if(isset($_GET['product-id'])){
                                         $newQuantity = $_SESSION['initialStock'] + $quantity;
                                         $_SESSION['initialStock'] = $newQuantity;
 
-                                        $restockSql = "UPDATE products SET initialStock = '$newQuantity' WHERE productID = '".$_SESSION['product-id']."'";
+                                        $restockSql = "UPDATE products SET initialStock = '$newQuantity'  WHERE productID = '".$_SESSION['product-id']."'";
                                         $restockSqlQuery = mysqli_query($db, $restockSql);
 
                                         if($restockSqlQuery) {
@@ -70,9 +70,9 @@ if(isset($_GET['product-id'])){
                                         <input type="text" class="form-control" id="name" value="<?php echo $_SESSION['productName'];?>" disabled>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="quantity">Quantity</label>
-                                        <input type="number" class="form-control" id="quantity" name="quantity" placeholder="" required>
-                                        <small class="text-primary">Current Stock: <strong><?php echo $_SESSION['initialStock'];?></strong></small>
+                                        <label for="quantity">Initial Stock</label>
+                                        <input type="number" class="form-control" id="quantity" name="initStock" placeholder="">
+                                        <small class="text-primary">Currently: <strong><?php echo $_SESSION['initialStock'];?></strong></small>
                                     </div>
                                 </div>
                                 <input type="submit" role="button" name="restock" class="btn btn-primary btn-block btn-lg" value="Restock">

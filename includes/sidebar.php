@@ -31,15 +31,17 @@
     <li class="nav-item">
         <a class="nav-link" href="<?php echo BASE_URL;?>/stock">
             <i class="fa fa-fw fa-check-square"></i>
-            <span>Stock Calculations</span>
+            <span>Stock</span>
         </a>
     </li>
+    <!--
     <li class="nav-item">
         <a class="nav-link" href="<?php echo BASE_URL;?>/profit-loss">
             <i class="fa fa-arrow-up"></i>
             <span>Profit Earned</span>
         </a>
     </li>
+-->
     <li class="nav-item">
         <a class="nav-link" href="<?php echo BASE_URL;?>/trash">
             <i class="fas fa-trash"></i>
