@@ -62,7 +62,7 @@
                                                 <th class="border-0 text-uppercase small font-weight-bold">Initial Stock</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Sold Quantity</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Quantity Left</th>
-                                                <th class="border-0 text-uppercase small font-weight-bold">Loss</th>
+                                                <th class="border-0 text-uppercase small font-weight-bold">Product Evaluation</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Amount</th>
                                                 <th class="border-0 text-uppercase small font-weight-bold">Action</th>
                                             </tr>
@@ -132,7 +132,7 @@
                             </div>
                             <div class="d-flex flex-row-reverse bg-dark text-light p-3 rounded-bottom">
                                 <div class="py-1 px-5 text-right">
-                                    <div class="mb-2">Total Loss:</div>
+                                    <div class="mb-2">Total Loss Amount:</div>
                                     <div class="h4 font-weight-bold text-danger"><i class="fas fa-arrow-down text-danger"></i>Tzs <?php echo number_format($_SESSION['loss']);?>/=</div>
                                 </div>
                             </div>

@@ -56,12 +56,12 @@ if(isset($_GET['product-id'])){
                                                             title: 'Success!',
                                                             text: 'Restocked Successfully!',
                                                             timer: 1500,
-                                                            buttons: false
+                                                            buttons: false,
                                                         });
 
                                                         setTimeout(function () {
                                                         window.location.href='".BASE_URL."/stock';
-                                                        }, 1000);
+                                                        }, 500);
                                                     </script>";
                                         }
                                     }
