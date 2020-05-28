@@ -1,4 +1,4 @@
-<ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+<ul class="navbar-nav sidebar sidebar-light accordion d-print-none" id="accordionSidebar">
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo BASE_URL;?>/dashboard">
         <div class="sidebar-brand-icon">
             <img src="<?php echo BASE_URL;?>/images/logo/logo-horizontal-white.png" width="180" height="25">

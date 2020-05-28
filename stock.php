@@ -28,6 +28,7 @@
                 <div id="container-wrapper" class="p-2">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Stock</h1>
+                        <button type="button" class="btn btn-outline-primary float-right ml-1 d-print-none" onclick="printFunction()"><i class="fa fa-print"></i> Print</button>
                     </div>
                     <!-- Row -->
                     <div class="row">

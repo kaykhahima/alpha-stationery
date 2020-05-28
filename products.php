@@ -114,8 +114,9 @@
                 <div class="p-2" id="container-wrapper">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Products</h1>
+                        <button type="button" class="btn btn-outline-primary float-right ml-1 d-print-none" onclick="printFunction()"><i class="fa fa-print"></i> Print</button>
                     </div>
-                    <div class="card mb-2">
+                    <div class="card mb-2 d-print-none">
                         <div class="card-body px-2">
                             <div class="col">
                                 <form class="" method="post" action="<?php echo BASE_URL;?>/products">
