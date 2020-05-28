@@ -40,15 +40,12 @@
         
         $saleSql = "INSERT INTO sales(productID, productName, quantitySold, priceEach, discount, totalAmount, dateAdded) VALUES('".$_SESSION['product-id']."', '".$_SESSION['productName']."', '".$_SESSION['quantity']."', '".$_SESSION['sellingPrice']."', '".$_SESSION['discount']."', '".$_SESSION['total']."', '$todayDate')";
         $saleSqlQuery = mysqli_query($db, $saleSql);
-        
+
+//        update stock quantity
         $updatedQuantity = $_SESSION['currentQuantiy'] - $_SESSION['quantity'];
-        
         $updateStockSql = "UPDATE products SET productQuantity = '$updatedQuantity' WHERE productID = '".$_SESSION['product-id']."'";
         $updateStockSqlQuery = mysqli_query($db, $updateStockSql);
-        
-//        if(!$saleSqlQuery) {
-//        echo die(mysqli_error($db));
-//        }
+
         
         echo "<script>
                 swal.fire({
@@ -107,7 +104,10 @@
                                                     
                                                     
                                                     while($row = mysqli_fetch_array($fetchProductsSqlQuery)) {
-                                                        $status = "disabled";
+
+//                                                        change status value spelling
+                                                        $status = "disabledd";
+
                                                         echo '<option value="'.$row['productID'].'"'; 
                                                         if($row['productQuantity'] <= 0) {echo $status;}
                                                         if($row['sellingPrice'] == "") {

@@ -7,9 +7,10 @@
     <meta name="description" content="A Content Management System for Alpha Stationery">
     <meta name="author" content="Kay Khahima">
     <title>Alpha Stationery</title>
-    <link href="<?php echo BASE_URL;?>/vendorr/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!--    <link href="<?php echo BASE_URL;?>/vendorr/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">-->
     <link href="<?php echo BASE_URL;?>/vendorr/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo BASE_URL;?>/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="<?php echo BASE_URL;?>/js/chart.js"></script>
     <script src="<?php echo BASE_URL;?>/js/swal2.js"></script>
     <link href="<?php echo BASE_URL;?>/css/ruang-admin.min.css" rel="stylesheet">
@@ -23,4 +24,5 @@
     <link rel="manifest" href="<?php echo BASE_URL;?>/manifest.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+
 </head>

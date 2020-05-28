@@ -94,7 +94,7 @@
                     <div class="tab-content">
 
                         <div class="tab-pane active" role="tabpanel" id="monthly">
-                            <div class="container">
+                            <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-lg-12 pt-3 pb-0">
                                         <span class="h3">Monthly sales</span>
@@ -129,8 +129,8 @@
                                                 <div class="card-body p-0">
                                                     <div class="row px-3 pt-3 pb-0">
                                                         <div class="col-md-12">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-hover" id="">
+                                                        <div class="table-responsive p-3">
+                                                            <table class="table table-hover" id="dataTable">
                                                                 <thead>
                                                                     <tr>
                                                                         <th class="border-0 text-uppercase small font-weight-bold">Name</th>
@@ -153,6 +153,13 @@
                                         
                                                 while($deta = mysqli_fetch_array($anotherQuery)) {
                                                     
+                                                    if($deta['buyingPrice'] == "") {
+                                                    $deta['buyingPrice'] = 0;
+                                                    }
+                                                    else {
+                                                    $deta['buyingPrice'] = $deta['buyingPrice'];
+                                                    }
+
                                                     $profit = $deta['sellingPrice'] - $deta['buyingPrice'];
                                                     $profitEarned = ($profit * $deta['SUM(sales.quantitySold)']) - ($deta['SUM(sales.discount)']);
                                                     

@@ -107,8 +107,8 @@
                                                 <div class="card-body p-0">
                                                     <div class="row px-3 pt-3 pb-0">
                                                         <div class="col-md-12">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-hover" id="">
+                                                        <div class="table-responsive p-3">
+                                                            <table class="table table-hover" id="dataTable">
                                                                 <thead>
                                                                     <tr>
                                                                         <th class="border-0 text-uppercase small font-weight-bold">Name</th>
@@ -130,6 +130,13 @@
                                                 $subTotalProfitEarned = 0;
                                         
                                                 while($deta = mysqli_fetch_array($anotherQuery)) {
+
+                                                    if($deta['buyingPrice'] == "") {
+                                                    $deta['buyingPrice'] = 0;
+                                                    }
+                                                    else {
+                                                    $deta['buyingPrice'] = $deta['buyingPrice'];
+                                                    }
                                                     $subTotal += $deta['SUM(sales.totalAmount)'];
                                                     
                                                     $profit = $deta['sellingPrice'] - $deta['buyingPrice'];

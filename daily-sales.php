@@ -80,9 +80,9 @@
                                         <!--                                        <p class="small">Expanded</p>-->
                                         <div class="card mb-5">
                                             <div class="card-body p-0">
-                                                <div class="row p-5">
+                                                <div class="row px-3 pt-3 pb-0">
                                                     <div class="col-md-12">
-                                                        <div class="table-responsive">
+                                                        <div class="table-responsive p-3">
                                                             <table class="table table-hover" id="dataTable">
                                                                 <thead>
                                                                     <tr>

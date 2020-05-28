@@ -71,7 +71,7 @@ if(isset($_GET['id'])){
                                             
                                             $newEditedProduct = $_SESSION['thisProductQuantity'] - $changeInProduct;
                                             $editProductSql = "UPDATE products SET productQuantity = '$newEditedProduct' WHERE productID = '".$_SESSION['saleProductID']."'";
-                                            $editProductQry = mysqli_query($db, $editProductSql);
+//                                            $editProductQry = mysqli_query($db, $editProductSql);
                                             
                                     
                                     
